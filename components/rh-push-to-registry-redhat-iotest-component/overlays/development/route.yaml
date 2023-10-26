@@ -1,0 +1,20 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: rh-push-to-registry-redhat-iotest-component
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: rh-push-to-registry-redhat-iotest-component
+    app.kubernetes.io/part-of: rh-push-to-registry-redhat-iotest
+  name: rh-push-to-registry-redhaecp5
+spec:
+  path: /
+  port:
+    targetPort: 8081
+  to:
+    kind: Service
+    name: rh-push-to-registry-redhat-iotest-component
+    weight: null
+status: {}
